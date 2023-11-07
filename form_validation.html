@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function senddata(){
+            var a = document.getElementById("n1").value;
+            var b = document.getElementById("n2").value;
+            var c = document.getElementById("n3").value;
+            var d = document.getElementById("n4").value;
+
+            if(a=="" || b=="" || c=="" || d==""){
+                alert("All fields are mendatory");
+                return false;
+            }
+            else if(b.length<10 || b.length>10){
+                alert("Number should be 10 digits");
+                return false;
+            }
+
+            else if(isNaN(b)){ //isNaN is used for Not a Number
+                alert("Only Numbers are allowed");
+                return false;
+            }
+            else if(c.length<6 || c.length>6){
+                alert("Password must be enter 6 digit only");
+                return false;
+            }
+
+            else if(c!=d){
+                alert("Please enter Same Password");
+                return false;
+            }
+            else{
+                return true;
+            }
+        }
+    </script>
+    <form action="Javascript_basic.html" onsubmit="return senddata()">
+        UserId: <br></bt><input type="text" id="n1"><br><br>
+        Contact: <br><input type="" id="n2"><br><br>
+        Password: <br><input type="password" id="n3"><br><br>
+        Confirm Password: <br><input type="password" id="n4"><br><br>
+        <input type="submit" value="Submit Your Data">
+    </form>
+</body>
+</html>
